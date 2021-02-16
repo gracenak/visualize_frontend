@@ -47,6 +47,8 @@ Make sure you create **a separate directory and a separate GitHub repository for
 
 [x]In `index.html`, you need to add some HTML. Text editors will often have a shortcut for creating a blank HTML document. In Atom you can begin typing "html" and then press tab to auto-generate the starter HTML.
 
+[x]Initialize github repo
+
 ### Setup Frontend Files
 
 The first step is getting the list of notes to show up on the page. Translating that to more technical language, we need to:
@@ -130,7 +132,7 @@ If you see the notes printed to the console, you're good to move forward.
 
 ### Render JSON
 
-The next step is getting the syllabi added to the DOM. No problem, add an empty `<div>` or `<ul>` element to `index.html` and go ahead and add each syllabus title, along with an edit button. We'll give the button a `data-id` in case we want to implement edit functionality in the future.
+[x]The next step is getting the visions added to the DOM. No problem, add an empty `<div>` or `<ul>` element to `index.html` and go ahead and add each syllabus title, along with an edit button. We'll give the button a `data-id` in case we want to implement edit functionality in the future.
 
 ```javascript
 /* src/index.js */
