@@ -2,6 +2,10 @@ const visionsURL = "http://localhost:3000/api/v1/visions"
 document.addEventListener('DOMContentLoaded', () => {
     alert('LOADED');
     getVisions()
+
+    const visionForm = document.querySelector("#create-vision-form")
+    visionForm.addEventListener('submit', (e) => 
+    createFormHandler(e))
 })
 
 function getVisions() {
@@ -25,3 +29,19 @@ function getVisions() {
       })
     })
 }
+
+function createFormHandler(e) {
+    e.preventDefault()
+    const titleInput = document.querySelector("#input-title").value
+    const descriptionInput = document.querySelector("#input-description").value
+    const imgInput = document.querySelector("#input-url").value
+    const userId = parseInt(document.querySelector("#users").value)
+    postFetch(titleInput, descriptionInput, imgInput, userId)
+
+} 
+
+function postFetch(title, description, image_url, user_id) {
+    console.log(title, description, image_url, user_id)
+
+}
+
