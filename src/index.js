@@ -15,6 +15,7 @@ function getVisions() {
           <div data-id=${vision.id}>
             <img src=${vision.attributes.image_url} height="200" width="250">
             <h3>${vision.attributes.title}</h3>
+            <h4>${vision.attributes.description}</h4>
             <p>${vision.attributes.user.name}</p>
             <button data-id=${vision.id}>Edit</button>
           </div>

@@ -14,8 +14,23 @@
 
     </head>
     <body>
+        <div class="form-container">
+            <form id="create-vision-form" style="">
+              <h3>Create a Vision!</h3>
+          
+              <input id='input-title' type="text" name="title" value="" placeholder="Enter vision title" class="input-text">
+              <br><br>
+              <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Enter vision description or quote..."></textarea>
+              <br><br>
+              <input id='input-url' type="text" name="image" value="" placeholder="Enter your vision image URL..." class="input-text">
+              <br><br>
+
+              <input id= 'create-button' type="submit" name="submit" value="Create New Vision" class="submit">
+            </form> 
+        </div>
+        <br><br>
         <div id="vision-container">
-            
+
         </div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
