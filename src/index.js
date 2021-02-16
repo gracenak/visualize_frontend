@@ -41,7 +41,30 @@ function createFormHandler(e) {
 } 
 
 function postFetch(title, description, image_url, user_id) {
-    console.log(title, description, image_url, user_id)
+    const bodyData = {title, description, image_url, user_id}
+    fetch(visionsURL, {
+    method: "POST",
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+    },
+    body: JSON.stringify(bodyData)
+    })
+    .then(response => response.json())
+    .then(vision => {
+        const visionData = vision.data.attributes
+        const visionMarkup = `
+        <div data-id=${vision.id}>
+            <img src=${visionData.image_url} height="200" width="250">
+            <h3>${visionData.title}</h3>
+            <h4>${visionData.description}</h4>
+            <p>${visionData.user.name}</p>
+            <button data-id=${visionData.id}>Edit</button>
+        </div>
+        <br><br>`;
+  
+      document.querySelector('#vision-container').innerHTML += visionMarkup;
+    })
+  }
 
-}
 
