@@ -6,7 +6,6 @@ class Vision {
         this.image_url = visionAttributes.image_url
         this.theme = visionAttributes.theme
         Vision.all.push(this)
-        // debugger
     }
 
     static findById(id) {
@@ -14,7 +13,6 @@ class Vision {
     }
     
     renderVision() {
-        // debugger
         return `
             <div data-id=${this.id}>
                 <img src=${this.image_url} height="200" width="250">

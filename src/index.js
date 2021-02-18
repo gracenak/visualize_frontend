@@ -16,10 +16,8 @@ function getVisions() {
              // remember our JSON data is a bit nested due to our serializer
       visions.data.forEach(vision => {
         // double check how your data is nested in the console so you can successfully access the attributes of each individual object
-        // debugger
         let newVision = new Vision(vision, vision.attributes)
         document.querySelector('#vision-container').innerHTML += newVision.renderVision()
-        // debugger
       })
     //   .catch(err => console.log(err))
     })
