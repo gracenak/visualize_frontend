@@ -6,7 +6,6 @@ class Vision {
         this.image_url = visionAttributes.image_url
         this.theme = visionAttributes.theme
         Vision.all.push(this)
-        debugger
     }
 
     static findById(id) {
