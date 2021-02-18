@@ -16,25 +16,13 @@ function getVisions() {
              // remember our JSON data is a bit nested due to our serializer
       visions.data.forEach(vision => {
         // double check how your data is nested in the console so you can successfully access the attributes of each individual object
-        renderVision(vision)
+        // debugger
+        let newVision = new Vision(vision, vision.attributes)
+        document.querySelector('#vision-container').innerHTML += newVision.renderVision()
+        // debugger
       })
     //   .catch(err => console.log(err))
     })
-}
-
-function renderVision(vision) {
-    const visionMarkup = `
-          <div data-id=${vision.id}>
-            <img src=${vision.attributes.image_url} height="200" width="250">
-            <h3>${vision.attributes.title}</h3>
-            <h4>${vision.attributes.description}</h4>
-            <p>${vision.attributes.theme.name}</p>
-            <button data-id=${vision.id}>Edit</button>
-            <button data-id=${vision.id} class='delete-btn'>Delete</button>
-          </div>
-          <br><br>`;
-
-          document.querySelector('#vision-container').innerHTML += visionMarkup
 }
 
 function createFormHandler(e) {
@@ -60,7 +48,8 @@ function postFetch(title, description, image_url, theme_id) {
     .then(response => response.json())
     .then(vision => {
         const visionData = vision.data
-        renderVision(visionData)
+        let newVision = new Vision(visionData, visionData.attributes)
+        document.querySelector('#vision-container').innerHTML += newVision.renderVision()
     })
   }
 
@@ -79,5 +68,3 @@ function postFetch(title, description, image_url, theme_id) {
           method: "DELETE"
       })
   }
-
-
