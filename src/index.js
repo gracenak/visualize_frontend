@@ -3,6 +3,7 @@ const visionsURL = "http://localhost:3000/api/v1/visions"
 document.addEventListener('DOMContentLoaded', () => {
     alert('LOADED');
     getVisions()
+    mountEditDestroy()
 
     const visionForm = document.querySelector("#create-vision-form")
     visionForm.addEventListener('submit', (e) => 
@@ -53,18 +54,37 @@ function postFetch(title, description, image_url, theme_id) {
     })
   }
 
-  function solve() {
-      console.log(e)
-      let visionCollection = document.querySelector('#vision-container')
-      visionCollection.addEventListener('click', function(e) {
-          e.preventDefault()
-          deleteVision(e)
-          e.target.parentElement.remove()
-      })
-  }
+function solve() {
+    console.log(e)
+    let visionCollection = document.querySelector('#vision-container')
+    visionCollection.addEventListener('click', function(e) {
+    e.preventDefault()
+    deleteVision(e)
+    e.target.parentElement.remove()
+    })
+}
 
-  function deleteVision(e) {
-      fetch(`${visionsURL}/${e.target.dataset.id}`, {
-          method: "DELETE"
-      })
-  }
+function deleteVision(e) {
+    fetch(`${visionsURL}/${e.target.dataset.id}`, {
+        method: "DELETE"
+    })
+}
+  
+function mountEditDestroy() {
+    const visionContainer = document.querySelector('#vision-container')
+    visionContainer.addEventListener('click', e => {
+        deleteFetch(e)
+        e.target.parentElement.remove()
+
+        // document.querySelector('#update-vision').innerHTML = vision.renderUpdateForm()
+        
+    })
+
+}
+
+function deleteFetch(e) {
+    fetch(`${visionsURL}/${e.target.dataset.id}`, {
+        method: "DELETE"
+    })
+}
+
