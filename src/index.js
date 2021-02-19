@@ -6,8 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     mountEditDestroy()
 
     const visionForm = document.querySelector("#create-vision-form")
-    visionForm.addEventListener('submit', (e) => 
-    createFormHandler(e))
+    visionForm.addEventListener('submit', e => {
+    createFormHandler(e)
+    e.target.reset()
+    })
 })
 
 function getVisions() {
@@ -33,6 +35,7 @@ function createFormHandler(e) {
     const imgInput = document.querySelector("#input-url").value
     const themeId = parseInt(document.querySelector("#themes").value)
     postFetch(titleInput, descriptionInput, imgInput, themeId)
+    e.target.reset
 
 } 
 
@@ -70,6 +73,22 @@ function mountEditDestroy() {
 function deleteVision(e) {
     fetch(`${visionsURL}/${e.target.dataset.id}`, {
         method: "DELETE"
+    })
+}
+
+function updateVision(visionObj) {
+    fetch(`${visionsURL}/${visionObj.id})`, {
+        method: "PATCH",
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({vision: visionObj})
+        })
+
+        .then(resp => resp.json())
+        .then(vision => {
+            console.log(vision)
     })
 }
 
