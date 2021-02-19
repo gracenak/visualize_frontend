@@ -54,26 +54,11 @@ function postFetch(title, description, image_url, theme_id) {
     })
   }
 
-function solve() {
-    console.log(e)
-    let visionCollection = document.querySelector('#vision-container')
-    visionCollection.addEventListener('click', function(e) {
-    e.preventDefault()
-    deleteVision(e)
-    e.target.parentElement.remove()
-    })
-}
-
-function deleteVision(e) {
-    fetch(`${visionsURL}/${e.target.dataset.id}`, {
-        method: "DELETE"
-    })
-}
   
 function mountEditDestroy() {
     const visionContainer = document.querySelector('#vision-container')
     visionContainer.addEventListener('click', e => {
-        deleteFetch(e)
+        deleteVision(e)
         e.target.parentElement.remove()
 
         // document.querySelector('#update-vision').innerHTML = vision.renderUpdateForm()
@@ -82,7 +67,7 @@ function mountEditDestroy() {
 
 }
 
-function deleteFetch(e) {
+function deleteVision(e) {
     fetch(`${visionsURL}/${e.target.dataset.id}`, {
         method: "DELETE"
     })
