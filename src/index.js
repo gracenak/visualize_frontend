@@ -74,50 +74,41 @@ function mountEditDestroy() {
             const currentTheme = e.target.parentElement.querySelector('p')
             const id = e.target.dataset.id
 
+            const formTitle = document.querySelector('h3')
             const image = document.querySelector('#input-url')
             const title = document.querySelector('#input-title')
             const description = document.querySelector('#input-description')
             const theme = document.querySelector('#themes')
             const submit = document.querySelector('#create-button')
 
-            image.value = currentImage.innerText
+            image.value = currentImage.src
             title.value = currentTitle.innerText
             description.value = currentDescription.innerText
             theme.value = currentTheme.innerText
 
+            formTitle.innerText = "Edit Vision!"
             submit.value = "Edit Vision"
 
             const form = document.querySelector('#create-vision-form')
             form.dataset.action = "update"
-
-
-
-
-            // fetch(`${visionsURL}/${e.target.dataset.id}`), {
-
-            //         method: "PATCH",
-            //         headers: {
-            //             'Content-Type': 'application/json',
-            //             'Accept': 'application/json'
-            //         },
-            //         body: JSON.stringify({vision: visionObj})
-               
-            // })
-            
-                //     .then(resp => resp.json())
-                //     .then(vision => {
-                //         console.log(vision)
-            
         }
-        
-        
         else if (e.target.className === "delete-button") {
             deleteVision(e)
             e.target.parentElement.remove()
         // document.querySelector('#update-vision').innerHTML = vision.renderUpdateForm()
         }
+    })    
+}
+
+function updateFormHandler(e) {
+    visionForm.addEventListener('submit', e => {
+        e.preventDefault()
+        const titleInput = document.querySelector("#input-title").value
+        const descriptionInput = document.querySelector("#input-description").value
+        const imgInput = document.querySelector("#input-url").value
+        const themeId = parseInt(document.querySelector("#themes").value)
+        postFetch(titleInput, descriptionInput, imgInput, themeId)
     })
-    
 }
 
 // function updateFormHandler(e) {
@@ -163,10 +154,9 @@ function updateVision(visionObj) {
         },
         body: JSON.stringify({vision: visionObj})
         })
-
         .then(resp => resp.json())
         .then(vision => {
-            console.log(vision)
+        console.log(vision)
     })
 }
 
