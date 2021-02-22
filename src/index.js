@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const visionForm = document.querySelector("#create-vision-form")
     visionForm.addEventListener('submit', e => {
     createFormHandler(e)
+    updateFormHandler(e)
+
     e.target.reset()
     })
     // const visionContainer = document.querySelector('#vision-container')
@@ -67,7 +69,7 @@ function postFetch(title, description, image_url, theme_id) {
 function mountEditDestroy() {
     const visionContainer = document.querySelector('#vision-container')
     visionContainer.addEventListener('click', e => {
-        if (e.target.className === "edit-button") {
+        if (e.target.className === "edit-btn") {
             const currentImage = e.target.parentElement.querySelector('img')
             const currentTitle = e.target.parentElement.querySelector('h3')
             const currentDescription = e.target.parentElement.querySelector('h4')
@@ -91,8 +93,9 @@ function mountEditDestroy() {
 
             const form = document.querySelector('#create-vision-form')
             form.dataset.action = "update"
+            form.dataset.vision = id
         }
-        else if (e.target.className === "delete-button") {
+        else if (e.target.className === "delete-btn") {
             deleteVision(e)
             e.target.parentElement.remove()
         // document.querySelector('#update-vision').innerHTML = vision.renderUpdateForm()
@@ -107,7 +110,16 @@ function updateFormHandler(e) {
         const descriptionInput = document.querySelector("#input-description").value
         const imgInput = document.querySelector("#input-url").value
         const themeId = parseInt(document.querySelector("#themes").value)
-        postFetch(titleInput, descriptionInput, imgInput, themeId)
+
+        if (e.target.datatset.action === "update") {
+            const vision = {title, description, image_url, theme_id, id: e.target.dataset.vision}
+            updateVision(vision)
+        }
+        else {
+            postFetch(titleInput, descriptionInput, imgInput, themeId)
+
+        }
+        e.target.reset
     })
 }
 
@@ -145,14 +157,14 @@ function deleteVision(e) {
     })
 }
 
-function updateVision(visionObj) {
-    fetch(`${visionsURL}/${visionObj.id})`, {
+function updateVision(e) {
+    fetch(`${visionsURL}/${e.target.dataset.id})`, {
         method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: JSON.stringify({vision: visionObj})
+        body: JSON.stringify({vision: e})
         })
         .then(resp => resp.json())
         .then(vision => {

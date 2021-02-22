@@ -20,7 +20,7 @@ class Vision {
                 <h3>${this.title}</h3>
                 <h4>${this.description}</h4>
                 <p>${this.theme.name}</p>
-                <button data-id=${this.id} class='edit-button'>Edit</button>
+                <button data-id=${this.id} class='edit-btn'>Edit</button>
                 <button data-id=${this.id} class='delete-btn'>Delete</button>
             </div>
         <br><br>`;
