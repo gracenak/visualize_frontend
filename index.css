@@ -1,0 +1,45 @@
+.site-title {
+    padding: 10px;
+  }
+
+  .form-group {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .form-group p {
+      color: whitesmoke
+  }
+  .jpy-5 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-bottom: 0;
+    background-color: #fff;
+  }
+  @media (min-width: 768px) {
+    .py-5 {
+      padding-top: 6rem;
+      padding-bottom: 6rem;
+    }
+  }
+  
+  .py-5 p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .py-5 h1 {
+    font-weight: 300;
+  }
+  
+  .py-5 .container {
+    max-width: 40rem;
+  }
+  
+  footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  footer p {
+    margin-bottom: .25rem;
+  }

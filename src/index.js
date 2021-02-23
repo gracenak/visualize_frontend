@@ -1,4 +1,10 @@
 const visionsURL = "http://localhost:3000/api/v1/visions"
+// const image = document.querySelector('#input-url')
+// const title = document.querySelector('#input-title')
+// const description = document.querySelector('#input-description')
+// const theme = document.querySelector('#themes')
+const visionForm = document.querySelector("#create-vision-form")
+
 
 document.addEventListener('DOMContentLoaded', () => {
     alert('LOADED');
@@ -9,15 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     visionForm.addEventListener('submit', e => {
     createFormHandler(e)
     updateFormHandler(e)
-
     e.target.reset()
+
     })
-    // const visionContainer = document.querySelector('#vision-container')
-    // visionContainer.addEventListener('click', e => {
-    //     const id = parseInt(e.target.dataset.id)
-    //     const vision = Vision.findById(id)
-    //     document.querySelector('#update-vision').addEventListener('submit', e => updateFormHandler(e))
-    // })
 })
 
 function getVisions() {
@@ -75,18 +75,19 @@ function mountEditDestroy() {
             const currentDescription = e.target.parentElement.querySelector('h4')
             const currentTheme = e.target.parentElement.querySelector('p')
             const id = e.target.dataset.id
+            const vision = Vision.findById(id)
 
             const formTitle = document.querySelector('h3')
             const image = document.querySelector('#input-url')
             const title = document.querySelector('#input-title')
             const description = document.querySelector('#input-description')
-            const theme = document.querySelector('#themes')
+            const theme = document.querySelector('#themes').value
             const submit = document.querySelector('#create-button')
 
             image.value = currentImage.src
             title.value = currentTitle.innerText
             description.value = currentDescription.innerText
-            theme.value = currentTheme.innerText
+            theme.value = currentTheme.value
 
             formTitle.innerText = "Edit Vision!"
             submit.value = "Edit Vision"
@@ -94,81 +95,63 @@ function mountEditDestroy() {
             const form = document.querySelector('#create-vision-form')
             form.dataset.action = "update"
             form.dataset.vision = id
+
+            updateFormHandler(e)
+
+
         }
+
         else if (e.target.className === "delete-btn") {
             deleteVision(e)
             e.target.parentElement.remove()
-        // document.querySelector('#update-vision').innerHTML = vision.renderUpdateForm()
         }
     })    
 }
 
 function updateFormHandler(e) {
-    visionForm.addEventListener('submit', e => {
-        e.preventDefault()
-        const titleInput = document.querySelector("#input-title").value
-        const descriptionInput = document.querySelector("#input-description").value
-        const imgInput = document.querySelector("#input-url").value
-        const themeId = parseInt(document.querySelector("#themes").value)
+    e.preventDefault()
+    const id = e.target.dataset.id;
+ 
+    const vision = Vision.findById(id);
+    console.log(vision)
+    debugger
+    const title = document.querySelector("#input-title").value
+    const description = document.querySelector("#input-description").value
+    const image_url = document.querySelector("#input-url").value
+    const theme_id = parseInt(document.querySelector("#themes").value)
 
-        if (e.target.datatset.action === "update") {
-            const vision = {title, description, image_url, theme_id, id: e.target.dataset.vision}
-            updateVision(vision)
-        }
-        else {
-            postFetch(titleInput, descriptionInput, imgInput, themeId)
-
-        }
-        e.target.reset
-    })
+    // const title = e.target.querySelector('#input-title').value;
+    // const description = e.target.querySelector('#input-description').value;
+    // const image_url = e.target.querySelector('#input-url').value;
+    // const theme_id = parseInt(e.target.querySelector('#themes').value);
+    updateVision(vision, title, description, image_url, theme_id)
 }
 
-// function updateFormHandler(e) {
-//     e.preventDefault()
-//     const id = parseInt(e.target.dataset.id);
-//     const vision = Vision.findById(id);
-//     const title = e.target.querySelector('#input-title').value;
-//     const description = e.target.querySelector('#input-description').value;
-//     const image_url = e.target.querySelector('#input-url').value;
-//     const theme_id = parseInt(e.target.querySelector('#themes').value);
-//     patchVision(vision, title, description, image_url, theme_id)
-// }
-
-// function patchVision(vision, title, description, image_url, theme_id) {
-//     const bodyJSON = { title, description, image_url, theme_id }
-//     fetch(`${visionsURL}/${vision.id})`, {
-//         method: "PATCH",
-//         headers: {
-//             'Content-Type': 'application/json',
-//             'Accept': 'application/json'
-//         },
-//         body: JSON.stringify(bodyJSON),
-//         })
-//         .then(resp => resp.json())
-//         .then(updatedVision => {
-//             console.log(updatedVision)
-//         })
-// }
-
-
-function deleteVision(e) {
-    fetch(`${visionsURL}/${e.target.dataset.id}`, {
-        method: "DELETE"
-    })
-}
-
-function updateVision(e) {
-    fetch(`${visionsURL}/${e.target.dataset.id})`, {
+function updateVision(vision, title, description, image_url, theme_id) {
+    // const bodyJSON = { title, description, image_url, theme_id }
+    fetch(`${visionsURL}/${vision.id}`, {
         method: "PATCH",
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: JSON.stringify({vision: e})
+        body: JSON.stringify({
+            title: title.value,
+            description: description.value,
+            image: image_url.value,
+            theme_id: theme_id.value
+        })
         })
         .then(resp => resp.json())
-        .then(vision => {
-        console.log(vision)
+        .then(updatedVision => {
+            console.log(updatedVision)
+        })
+}
+
+
+function deleteVision(e) {
+    fetch(`${visionsURL}/${e.target.dataset.id}`, {
+        method: "DELETE"
     })
 }
 

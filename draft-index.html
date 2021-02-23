@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+            <!-- Bootstrap-4 CSS -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="form-container">
+            <form id="create-vision-form" data-action="create" style="">
+              <h3>Create a Vision!</h3>
+          
+              <input id='input-title' type="text" name="title" value="" placeholder="Enter vision title" class="input-text">
+              <br><br>
+              <textarea id='input-description' name="description" rows="8" cols="80" value="" placeholder="Enter vision description or quote..."></textarea>
+              <br><br>
+              <input id='input-url' type="text" name="image" value="" placeholder="Enter your vision image URL..." class="input-text">
+              <br><br>
+
+              <p>Choose A Theme</p>
+              <select id="themes" name="themes">
+                <option value="1">Empowerment</option>
+                <option value="2">Self Love</option>
+                <option value="3">Career</option>
+                <option value="4">Love</option>
+                <option value="5">Home</option>
+                <option value="6">Travel</option>
+                <option value="7">Health</option>
+                <option value="8">Fitness</option>
+                <option value="9">Family</option>
+                <option value="10">Growth Mindset</option>
+                <option value="11">Creativity</option>
+                <option value="12">Music</option>
+                <option value="13">Art</option>
+                <option value="14">Other</option>
+              </select>
+              <br><br> 
+
+              <input id= 'create-button' type="submit" name="submit" value="Create New Vision" class="submit">
+
+              <button type="button" class="btn btn-primary">Primary</button>
+
+            </form> 
+        </div>
+        <br><br>
+        <div id="vision-container">
+
+        </div>
+  
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script src="src/index.js" charset="utf-8"></script>
+        <script src="src/vision.js" charset="utf-8"></script>
+
+        <script src="" async defer></script>
+    </body>
+</html>
