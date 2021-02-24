@@ -7,9 +7,23 @@
     padding-bottom: 1rem;
   }
   
-  .form-group p {
+  .form-container p {
       color: whitesmoke
   }
+
+  .album py-5 bg-light {
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    max-width: 496px;
+    margin: 0 auto;
+    padding: 9px;
+  }
+
+
   .jpy-5 {
     padding-top: 3rem;
     padding-bottom: 3rem;

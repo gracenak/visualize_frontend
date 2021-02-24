@@ -4,6 +4,8 @@ const visionsURL = "http://localhost:3000/api/v1/visions"
 // const description = document.querySelector('#input-description')
 // const theme = document.querySelector('#themes')
 const visionForm = document.querySelector("#create-vision-form")
+const visionContainer = document.querySelector('#vision-container')
+const visionCard = document.querySelector('.card')
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -67,17 +69,25 @@ function postFetch(title, description, image_url, theme_id) {
 
   
 function mountEditDestroy() {
+    const visionCard = document.querySelector('.card')
+    const imageContainer = document.querySelector('.card-image-top')
+    const visionBody = document.querySelector('.card-body')
+    const editDeleteBtn = document.querySelector('.btn-group')
+    const themeFooter = document.querySelector('.card-footer')
     const visionContainer = document.querySelector('#vision-container')
     visionContainer.addEventListener('click', e => {
-        if (e.target.className === "edit-btn") {
-            const currentImage = e.target.parentElement.querySelector('img')
-            const currentTitle = e.target.parentElement.querySelector('h3')
-            const currentDescription = e.target.parentElement.querySelector('h4')
-            const currentTheme = e.target.parentElement.querySelector('p')
+        console.log("click")
+        if (e.target.className === "edit-btn btn-sm btn-outline-secondary") {
+    
+
+            const currentImage = e.target.parentElement.parentElement.parentElement.parentElement.querySelector('img')
+            const currentTitle = e.target.parentElement.parentElement.parentElement.querySelector('.card-title')
+            const currentDescription = e.target.parentElement.parentElement.parentElement.querySelector('.card-text')
+            const currentTheme = e.target.parentElement.parentElement.parentElement.querySelector('.text-muted')
             const id = e.target.dataset.id
             const vision = Vision.findById(id)
 
-            const formTitle = document.querySelector('h3')
+            const formTitle = document.querySelector('h4')
             const image = document.querySelector('#input-url')
             const title = document.querySelector('#input-title')
             const description = document.querySelector('#input-description')
@@ -101,7 +111,7 @@ function mountEditDestroy() {
 
         }
 
-        else if (e.target.className === "delete-btn") {
+        else if (e.target.className === "delete-btn btn-sm btn-outline-secondary") {
             deleteVision(e)
             e.target.parentElement.remove()
         }
