@@ -42,7 +42,7 @@ An MVP JS Frontend application with a Rails API backend that demonstrates Client
     <li> Run 'bundle install'
     <li> Run 'rake db:migrate' # migrates the tables into the database
     <li> Run 'rake db:seed'    # migrates seed file containing initial data to test the application with
-    <li> Run the server with 'rails s'. Click <a href="http://localhost:3000/api/v1/visions">here</a> to see the JSON view of the objects.
+    <li> Run the server with 'rails s'. Click <a href="http://localhost:3000/api/v1/visions">here</a> to see the JSON view of the vision objects and <a href="http://localhost:3000/api/v1/themes">here</a> to see the JSON view of theme objects.
 </ul>
 
 <h4>JavaScript Frontend: </h4>
