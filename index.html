@@ -20,7 +20,9 @@
 
      <!-- JS Project Tags -->
     <script src="src/vision.js" charset="utf-8"></script>
+    <script src="src/service.js" charset="utf-8"></script>
     <script src="src/index.js" charset="utf-8"></script>
+    <!-- <script src="src/theme.js" charset="utf-8"></script> -->
     
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -54,49 +56,11 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">Create A Vision</h4>
-          <p class="text-muted">"The future belongs to those who believe in the beauty of their dreams." - Eleanor Roosevelt</p>
+          <h4 class="text-white">Visualize</h4>
+          <p class="text-muted">"Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world."</p>
+          <p class="text-muted">-- HARRIET TUBMAN</p>  
         </div>
-        <div class="form-container">
-          <form id="create-vision-form" data-action="create" style="">
-                <!-- <div class="form-group"> -->
-                    <input id='input-title' type="text" name="title" value="" placeholder="Enter vision title" class="input-text">
-                    <br><br>
-                    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                <!-- </div> -->
-                <!-- <div class="form-group"> -->
-                  <textarea id='input-description' name="description" rows="4" cols="60" value="" placeholder="Enter vision description or quote..."></textarea>
-                  <br><br>
-                <!-- </div> -->
-                <!-- <div class="form-group"> -->
-                    <input id='input-url' type="text" name="image" value="" placeholder="Enter your image URL..." class="input-text">
-                    <br><br>
-                <!-- </div> -->
-                <!-- <div class="form-group"> -->
-                    <p>Choose A Theme</p>
-                <select id="themes" name="themes">
-                    <option value="1">Empowerment</option>
-                    <option value="2">Self Love</option>
-                    <option value="3">Career</option>
-                    <option value="4">Love</option>
-                    <option value="5">Home</option>
-                    <option value="6">Travel</option>
-                    <option value="7">Health</option>
-                    <option value="8">Fitness</option>
-                    <option value="9">Family</option>
-                    <option value="10">Growth Mindset</option>
-                    <option value="11">Creativity</option>
-                    <option value="12">Music</option>
-                    <option value="13">Art</option>
-                    <option value="14">Other</option>
-                </select>
-                <br><br>
-                <!-- </div> -->
-                    <input id= 'create-button' type="submit" name="submit" value="Create New Vision" class="submit">
-
-                <!-- <button type="submit" name="submit" id= 'create-button' class="submit" value="Create New Vision">Create Vision</button> -->
-              </form>
-        </div>
+       
       </div>
     </div>
   </div>
@@ -104,7 +68,7 @@
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="me-2" viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Submit a Vision Here</strong>
+        <strong>VISUALIZE</strong>
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -115,17 +79,55 @@
 
 <main>
 
-    <section class="py-5 text-center container">
-        <div class="row py-lg-5">
-          <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="fw-light">Visualize</h1>
-            <p class="lead text-muted">"Every great dream begins with a dreamer. Always remember, you have within you the strength, the patience, and the passion to reach for the stars to change the world."</p>
-            <p>HARRIET TUBMAN</p>
+  <section class="jumbotron text-center">
+    <div class="title-container">
+            <h1 class="fw-light">Create a Vision</h1>
+            <p class="lead text-muted">"The future belongs to those who believe in the beauty of their dreams."</p>
+            <p class="lead text-muted">-- Eleanor Roosevelt</p>
+            <div class="form-container">
+              <form id="create-vision-form" data-action="create" style="">
+                    <!-- <div class="form-group"> -->
+                        <input id='input-title' type="text" name="title" value="" placeholder="Enter vision title" class="input-text">
+                        <br><br>
+                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                    <!-- </div> -->
+                    <!-- <div class="form-group"> -->
+                      <textarea id='input-description' name="description" rows="4" cols="60" value="" placeholder="Enter vision description or quote..."></textarea>
+                      <br><br>
+                    <!-- </div> -->
+                    <!-- <div class="form-group"> -->
+                        <input id='input-url' type="text" name="image" value="" placeholder="Enter your image URL..." class="input-text">
+                        <br><b><br>
+                    <!-- </div> -->
+                    <!-- <div class="form-group"> -->
+                      <p class="lead text-muted">Choose A Theme</p>
+                    <select id="themes" name="themes">
+                        <option value="1">Empowerment</option>
+                        <option value="2">Self Love</option>
+                        <option value="3">Career</option>
+                        <option value="4">Love</option>
+                        <option value="5">Home</option>
+                        <option value="6">Travel</option>
+                        <option value="7">Health</option>
+                        <option value="8">Fitness</option>
+                        <option value="9">Family</option>
+                        <option value="10">Growth Mindset</option>
+                        <option value="11">Creativity</option>
+                        <option value="12">Music</option>
+                        <option value="13">Art</option>
+                        <option value="14">Other</option>
+                    </select>
+                    <br><br>
+                    <!-- </div> -->
+                        <input id= 'create-button' type="submit" name="submit" value="Create New Vision" class="submit" style.backgroundColor="blue">
+    
+                    <!-- <button type="submit" name="submit" id= 'create-button' class="submit" value="Create New Vision">Create Vision</button> -->
+                  </form>
+            </div>
             <!-- <p>
               <a href="#" class="btn btn-primary my-2">Main call to action</a>
               <a href="#" class="btn btn-secondary my-2">Secondary action</a>
             </p> -->
-          </div>
         </div>
       </section>
 
