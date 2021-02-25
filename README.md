@@ -38,7 +38,7 @@ An MVP JS Frontend application with a Rails API backend that demonstrates Client
 <h2>Install Instructions</h2>
 <h4>Rails Backend:</h4>
 <ul>
-    <li> Here is a link to my <a href="https://github.com/gracenak/visualize_backend.git">Rails API Backend</a>. Clone this repo. 
+    <li> Here is a link to my <a href="https://github.com/gracenak/visualize_backend.git">Rails API Backend</a> to clone.
     <li> Run 'bundle install'
     <li> Run 'rake db:migrate' # migrates the tables into the database
     <li> Run 'rake db:seed'    # migrates seed file containing initial data to test the application with
