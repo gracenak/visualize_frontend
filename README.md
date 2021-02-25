@@ -1,12 +1,12 @@
 <h1>Visualize</h1>
 
-A virtual vision board for everyone to utilize. You can create a vision by entering a catchy title, description/quote, selecting a theme, and uploading an image to visually motivate you. You can also delete your visions that you've already accomplished or have simply decided that you don't want to see anymore. This is a collaborative vision board. Enjoy!
+A virtual vision board for everyone to utilize. Create a vision by entering a catchy title, description/quote, selecting a theme, and uploading an image to visually motivate you. Delete visions that you've already accomplished or simply have decided that you don't want to see anymore. This is a collaborative vision board. Enjoy!
 
 This rails application was created as a project requirement for the <a href="https://flatironschool.com/career-courses/coding-bootcamp/online">Flatiron Online Software Engineering Program</a>.
 
 For more information, check out <a href="https://gracenak.medium.com/jingle-bell-rails-associations-and-nested-forms-all-the-way-31ce77e4e4f8">my blog</a> and a <a href="https://www.youtube.com/watch?v=NdAa5LUz7Ns&t=14s">walkthrough demonstration</a> of this project.
 
-An MVP JS Frontend application with a Rails API backend that demonstrate Client-Server Communication and use:
+An MVP JS Frontend application with a Rails API backend that demonstrates Client-Server Communication and uses:
 <h4>JavaScript</h4>
 <ul>
     <li> OOJS classes and functions to encapsulate related data and behavior
@@ -38,19 +38,18 @@ An MVP JS Frontend application with a Rails API backend that demonstrate Client-
 <h2>Install Instructions</h2>
 <h4>Rails Backend:</h4>
 <ul>
-    <li> Here is a link to my <a href="https://github.com/gracenak/visualize_backend.git">Rails API Backend</a>. 
-    <li> Clone <a href="https://github.com/gracenak/visualize_backend.git">this repo</a>.
+    <li> Here is a link to my <a href="https://github.com/gracenak/visualize_backend.git">Rails API Backend</a>. Clone this repo. 
     <li> Run 'bundle install'
     <li> Run 'rake db:migrate' # migrates the tables into the database
     <li> Run 'rake db:seed'    # migrates seed file containing initial data to test the application with
-    <li> Run the server with 'rails s' and click <a href="https://http://localhost:3000/api/v1/visions">here</a> if you would like to see JSON view of the objects.
+    <li> Run the server with 'rails s'. Click <a href="https://http://localhost:3000/api/v1/visions">here</a> to see the JSON view of the objects.
 </ul>
 
 <h4>JavaScript Frontend: </h4>
 <ul> 
     <li> Clone <a href="https://github.com/gracenak/visualize_frontend.git">this repo</a>.
-    <li> Right click on 'index.html' and 'run server' or 'Copy path' and paste into browser URL bar.
-    <li> Make sure your Rails backend server is running. Enjoy!
+    <li> Right click on 'index.html' and 'Run Server' or 'Copy Path' to paste into the browser URL bar.
+    <li> Make sure the Rails API backend server is running. Enjoy!
 </ul>
 
 
