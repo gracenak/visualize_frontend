@@ -4,7 +4,7 @@ A virtual vision board for everyone to utilize. Create a vision by entering a ca
 
 This rails application was created as a project requirement for the <a href="https://flatironschool.com/career-courses/coding-bootcamp/online">Flatiron Online Software Engineering Program</a>.
 
-For more information, check out <a href="https://gracenak.medium.com/jingle-bell-rails-associations-and-nested-forms-all-the-way-31ce77e4e4f8">my blog</a> and a <a href="https://www.youtube.com/watch?v=NdAa5LUz7Ns&t=14s">walkthrough demonstration</a> of this project.
+For more information, check out <a href="https://gracenak.medium.com/jingle-bell-rails-associations-and-nested-forms-all-the-way-31ce77e4e4f8">my blog</a> and a <a href="https://www.youtube.com/watch?v=r4Jg6Goo1lM&feature=youtu.be">walkthrough demonstration</a> of this project.
 
 An MVP JS Frontend application with a Rails API backend that demonstrates Client-Server Communication and uses:
 <h4>JavaScript</h4>

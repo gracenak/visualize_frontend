@@ -5,7 +5,7 @@ class Vision {
         this.description = visionAttributes.description
         this.image_url = visionAttributes.image_url
         this.theme = visionAttributes.theme 
-        Vision.all.push(this)
+        Vision.all.unshift(this)
     }
 
     static renderVisions() {
@@ -30,7 +30,6 @@ class Vision {
                     <p class="card-text">${this.description}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <button data-id=${this.id} type="button" class="edit-btn btn-sm btn-outline-secondary">Edit</button>
                             <button data-id=${this.id} type="button" class="delete-btn btn-sm btn-outline-secondary">Delete</button>
                         </div>
                     </div>
