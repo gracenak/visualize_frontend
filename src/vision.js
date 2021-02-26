@@ -1,5 +1,5 @@
 class Vision {
-    constructor(vision, visionAttributes) {
+    constructor(vision, visionAttributes = {}) {
         this.id = vision.id
         this.title = visionAttributes.title
         this.description = visionAttributes.description
@@ -11,6 +11,7 @@ class Vision {
     static renderVisions() {
         apiService.fetchVisions()
             .then(visions => {
+
                 visions.data.forEach(vision => {
                 let newVision = new Vision(vision, vision.attributes)
                 document.querySelector('#vision-container').innerHTML += newVision.renderVision()
@@ -51,7 +52,7 @@ class Vision {
         const descriptionInput = document.querySelector("#input-description").value
         const imgInput = document.querySelector("#input-url").value
         const themeId = parseInt(document.querySelector("#themes").value) 
-        apiService.postFetch(titleInput, descriptionInput, imgInput, themeId)
+        apiService.fetchPost(titleInput, descriptionInput, imgInput, themeId)
         visionForm.reset()
         })
     } 
@@ -63,14 +64,14 @@ class Vision {
                 return null; // to avoid a possible "TypeError: Cannot read property 'parentNode' of null" if the requested level is higher than document
             }
         }
-    return element;
+        return element;
     }
 
     static mountDestroy() {
         const visionContainer = document.querySelector('#vision-container')
         visionContainer.addEventListener('click', e => {
             if (e.target.className === "delete-btn btn-sm btn-outline-secondary") {
-                apiService.deleteVision(e)
+                apiService.fetchDelete(e)
                 this.getParentNode(e.target, 6).remove() 
             }
         })    

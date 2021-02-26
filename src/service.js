@@ -9,7 +9,7 @@ class ApiService {
         .then(response => response.json())
     }
 
-    postFetch(title, description, image_url, theme_id) {
+    fetchPost(title, description, image_url, theme_id) {
         const bodyData = {title, description, image_url, theme_id}
         return fetch(`${this.visionsURL}`, {
         method: "POST",
@@ -21,6 +21,7 @@ class ApiService {
         })
         .then(response => response.json())
         .then(vision => {
+
             const visionData = vision.data
             let newVision = new Vision(visionData, visionData.attributes)
             document.querySelector('#vision-container').innerHTML += newVision.renderVision()
@@ -28,7 +29,7 @@ class ApiService {
     }
         
         
-    deleteVision(e) {
+    fetchDelete(e) {
         fetch(`${this.visionsURL}/${e.target.dataset.id}`, {
             method: "DELETE"
         })
