@@ -24,7 +24,8 @@ class ApiService {
 
             const visionData = vision.data
             let newVision = new Vision(visionData, visionData.attributes)
-            document.querySelector('#vision-container').innerHTML += newVision.renderVision()
+            // document.querySelector('#vision-container').innerHTML += newVision.renderVision()
+            document.querySelector('#vision-container').insertAdjacentHTML("afterbegin", newVision.renderVision())
         })
     }
         
