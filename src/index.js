@@ -5,4 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     Vision.renderVisions()
     Vision.mountDestroy()
     Vision.createVisionForm()
+    Theme.renderThemes()
+    Theme.filterByTheme()
+    Theme.renderFilteredVisions()
 })

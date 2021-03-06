@@ -2,6 +2,7 @@ class ApiService {
 
     constructor() {
         this.visionsURL = `http://localhost:3000/api/v1/visions`
+        this.themesURL = `http://localhost:3000/api/v1/themes`
     }
 
     fetchVisions() {
@@ -34,5 +35,10 @@ class ApiService {
         fetch(`${this.visionsURL}/${e.target.dataset.id}`, {
             method: "DELETE"
         })
+    }
+
+    fetchThemes() {
+        return fetch(`${this.themesURL}`)
+        .then(response => response.json())
     }
 }

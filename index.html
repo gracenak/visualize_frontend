@@ -22,7 +22,7 @@
     <script src="src/vision.js" charset="utf-8"></script>
     <script src="src/service.js" charset="utf-8"></script>
     <script src="src/index.js" charset="utf-8"></script>
-    <!-- <script src="src/theme.js" charset="utf-8"></script> -->
+    <script src="src/theme.js" charset="utf-8"></script>
     
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
@@ -86,36 +86,18 @@
             <p class="lead text-muted">-- Eleanor Roosevelt</p>
             <div class="form-container">
               <form id="create-vision-form" data-action="create" style="">
-                    <!-- <div class="form-group"> -->
+               
                         <input id='input-title' type="text" name="title" value="" placeholder="Enter vision title" class="input-text">
                         <br><br>
-                        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
-                    <!-- </div> -->
-                    <!-- <div class="form-group"> -->
+
                       <textarea id='input-description' name="description" rows="4" cols="60" value="" placeholder="Enter vision description or quote..."></textarea>
                       <br><br>
-                    <!-- </div> -->
-                    <!-- <div class="form-group"> -->
+               
                         <input id='input-url' type="text" name="image" value="" placeholder="Enter your image URL..." class="input-text">
                         <br><b><br>
-                    <!-- </div> -->
-                    <!-- <div class="form-group"> -->
+               
                       <p class="lead text-muted">Choose A Theme</p>
                     <select id="themes" name="themes">
-                        <option value="1">Empowerment</option>
-                        <option value="2">Self Love</option>
-                        <option value="3">Career</option>
-                        <option value="4">Love</option>
-                        <option value="5">Home</option>
-                        <option value="6">Travel</option>
-                        <option value="7">Health</option>
-                        <option value="8">Fitness</option>
-                        <option value="9">Family</option>
-                        <option value="10">Growth Mindset</option>
-                        <option value="11">Creativity</option>
-                        <option value="12">Music</option>
-                        <option value="13">Art</option>
-                        <option value="14">Other</option>
                     </select>
                     <br><br>
                     <!-- </div> -->
@@ -124,12 +106,15 @@
                     <!-- <button type="submit" name="submit" id= 'create-button' class="submit" value="Create New Vision">Create Vision</button> -->
                   </form>
             </div>
-            <!-- <p>
-              <a href="#" class="btn btn-primary my-2">Main call to action</a>
-              <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-            </p> -->
+
         </div>
       </section>
+      <br><br>
+        <div class="search-input">
+        <p class="lead text-muted">Filter Visions By Theme</p>
+
+
+      </div>
 
   <div class="album py-5 bg-light">
     <div class="container" id=vision-container>
@@ -148,7 +133,6 @@
       <a href="#">Back to top</a>
     </p>
     <p class="mb-1">© Visualize is an app created by Grace Nakano as part of the Fullstack Software Engineering Progam at Flatiron School.</p>
-    <!-- <p class="mb-0">New to Bootstrap? <a href="/">Visit the homepage</a> or read our <a href="../getting-started/introduction/">getting started guide</a>.</p> -->
   </div>
 </footer>
 
