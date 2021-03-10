@@ -26,7 +26,7 @@ class Theme {
     static filterByTheme() {
         let search = document.querySelector('.search-input')
         let select = document.createElement('select')
-        let submit = document.createElement('button')
+        let submit = document.createElement('p')
 
         select.setAttribute("class", "filter-options")
         submit.innerHTML = "Filter By Theme"
