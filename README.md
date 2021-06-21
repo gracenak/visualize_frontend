@@ -4,11 +4,7 @@ A virtual vision board for everyone to utilize. Create a vision by entering a ca
 
 This rails application was created as a project requirement for the <a href="https://flatironschool.com/career-courses/coding-bootcamp/online">Flatiron Online Software Engineering Program</a>.
 
-<<<<<<< HEAD
-For more information, check out <a href="https://gracenak.medium.com/understanding-dom-and-the-three-pillars-df6d7675c662">my blog</a> and a <a href="https://www.youtube.com/watch?v=fSHWiUSIuUU">walkthrough demonstration</a> of this project.
-=======
-For more information, check out <a href="https://gracenak.medium.com/understanding-dom-and-the-three-pillars-df6d7675c662">my blog</a> and a <a href="https://www.youtube.com/watch?v=m6OeKhOziSg">walkthrough demonstration</a> of this project.
->>>>>>> a5790b1cdc299d7121955008ebcd6a9c9431e1c5
+For more information, check out <a href="https://gracenak.medium.com/understanding-dom-and-the-three-pillars-df6d7675c662">my blog</a> and a <a href="https://youtu.be/fSHWiUSIuUU">walkthrough demonstration</a> of this project.
 
 An MVP JS Frontend application with a Rails API backend that demonstrates Client-Server Communication and uses:
 <h4>JavaScript</h4>
