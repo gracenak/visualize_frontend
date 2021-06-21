@@ -36,7 +36,7 @@ class Theme {
         .then(themes => {
 
             themes.data.forEach(theme => {
-                let themeName = document.createElement('option')    
+                let themeName = document.createElement('option')
                 themeName.setAttribute("value", theme.attributes.name)
                 themeName.innerHTML = theme.attributes.name
                 select.append(themeName)
@@ -46,6 +46,9 @@ class Theme {
 
     static renderFilteredVisions() {
         let select = document.querySelector('.filter-options')
+        // document.getElementById("select").setAttribute("placeholder","new text content");
+
+        // select.setAttribute("placeholder", "Choose a theme")
         select.addEventListener("change", e =>{
             let searchSelect = e.target.value
             let visionCard = document.querySelectorAll('#vision-card')
